@@ -1,0 +1,27 @@
+name: Test
+
+on: pull_request
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Local test
+        uses: ./
+        with:
+          a: a_foo
+          b: b_foo
+          c: c_foo
+          d: d_foo
+          e: e_foo
+
+      - name: From pre-built image
+        uses: docker://ghcr.io/codfish/docker-action-issue:latest
+        with:
+          a: a_foo
+          b: b_foo
+          c: c_foo
+          d: d_foo
+          e: e_foo

@@ -1,0 +1,44 @@
+name: test
+author: codfish
+branding:
+  icon: upload-cloud
+  color: orange
+description: Testing $input envvars with docker actions
+inputs:
+  a:
+    description: a input description
+    required: true
+  b:
+    description: b input description
+    required: true
+  c:
+    description: c input description
+    required: true
+  d:
+    description: d input description
+    required: false
+    default: ''
+  e:
+    description: e input description
+    required: true
+  f:
+    description: f input description
+    required: true
+  g:
+    description: g input description
+    default: false
+  h:
+    description: h input description
+    default: false
+  i:
+    description: i input description
+    default: repo-policy.json
+  j:
+    description: j input description
+    default: latest
+outputs:
+  image:
+    description: 'The created image name'
+runs:
+  using: docker
+  image: Dockerfile
